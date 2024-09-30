@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2017", // Specify ECMAScript target
+    "module": "ESNext", // Target ES modules
+    "moduleResolution": "node",
+    "declaration": true, // Generate .d.ts files for TypeScript types
+    "declarationMap": true, // Enable declaration source maps
+    "outDir": "./dist", // Output directory for compiled files
+    "esModuleInterop": true, // Interoperability between CommonJS and ES modules
+    "allowSyntheticDefaultImports": true,
+    "strict": true, // Enable strict type-checking options
+    "sourceMap": true // Generate source maps
+  },
+  "include": ["src/**/*"], // Include all files in src/
+  "exclude": ["node_modules", "dist"] // Exclude build and dependency directories
+}
