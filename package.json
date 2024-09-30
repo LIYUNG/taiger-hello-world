@@ -1,12 +1,12 @@
 {
   "name": "@taiger-common/hellow-world",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "hello world for taiger",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "exports": {
-    "./*": {
+    ".": {
       "types": "./dist/types/*.d.ts",
       "require": "./dist/cjs/*.js",
       "import": "./dist/esm/*.js",
