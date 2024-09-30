@@ -1,6 +1,6 @@
 {
   "name": "@taiger-common/hellow-world",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "hello world for taiger",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.mjs",
@@ -24,10 +24,6 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@taiger-common/hellow-world": "file:",
-    "@taiger/hellow-world": "file:"
-  },
   "devDependencies": {
     "@babel/cli": "^7.25.6",
     "@babel/core": "^7.25.2",
