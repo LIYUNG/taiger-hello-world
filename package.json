@@ -2,17 +2,25 @@
   "name": "@taiger-common/hellow-world",
   "version": "1.0.1",
   "description": "hello world for taiger",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.mjs"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npm run build:ts && npm run build:js",
-    "build:ts": "tsc",
-    "build:js": "npx babel src --out-dir dist --extensions '.ts,.js' --out-file-extension .js",
-    "prepare": "npm run build"
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json && npm run rename:esm",
+    "build": "npm run build:cjs && npm run build:esm",
+    "clean": "rimraf dist",
+    "rename:esm": "/bin/zsh ./scripts/fix-mjs.sh",
+    "prepack": "npm run clean && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +37,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
     "typescript": "^5.6.2"
   }
 }
