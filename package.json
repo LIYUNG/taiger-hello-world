@@ -7,20 +7,20 @@
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.mjs"
+      "import": "./dist/esm/index.mjs",
+      "default": "./dist/esm/index.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json && npm run rename:esm",
-    "build": "npm run build:cjs && npm run build:esm",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
     "clean": "rimraf dist",
-    "rename:esm": "/bin/zsh ./scripts/fix-mjs.sh",
-    "prepack": "npm run clean && npm run build"
+    "build": "npm run clean && npm run compile && node ./scripts/prepare-package-json"
   },
   "author": "",
   "license": "ISC",
