@@ -1,26 +1,28 @@
 {
   "name": "@taiger-common/hellow-world",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "hello world for taiger",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "exports": {
-    ".": {
+    "./*": {
       "types": "./dist/types/*.d.ts",
       "require": "./dist/cjs/*.js",
       "import": "./dist/esm/*.js",
       "default": "./dist/esm/*.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
     "clean": "rimraf dist",
-    "build": "npm run clean && npm run compile && node ./scripts/prepare-package-json"
+    "build": "npm-run-all  clean compile && node ./scripts/prepare-package-json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LIYUNG/taiger-hello-world.git"
   },
   "author": "",
   "license": "ISC",
@@ -35,5 +37,9 @@
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@types/node": "^22.7.4",
+    "npm-run-all": "^4.1.5"
   }
 }
