@@ -1,6 +1,6 @@
 {
   "name": "@taiger-common/hellow-world",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "hello world for taiger",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

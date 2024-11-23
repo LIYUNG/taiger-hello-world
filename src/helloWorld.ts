@@ -1,5 +1,5 @@
 export function helloWorldFunc(): string {
-  return 'Hello, world function!';
+  return "Hello, world function!";
 }
 
-export const helloWorldSring = 'Hello, world String!';
+export const helloWorldSring: string = "Hello, world String!";
